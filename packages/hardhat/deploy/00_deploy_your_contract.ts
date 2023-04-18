@@ -1,5 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
+import { parseEther } from "ethers/lib/utils";
 
 /**
  * Deploys a contract named "YourContract" using the deployer account and
@@ -21,15 +22,29 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("YourContract", {
+  const factory = await deploy("TierFactory", {
     from: deployer,
     // Contract constructor arguments
-    args: [deployer],
+    args: [parseEther("0.1"), "0x3db5E84e0eBBEa945a0a82E879DcB7E1D1a587B4"],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
     autoMine: true,
   });
+
+  factory.receipt && console.log("Mecenate TIer deployed at:", factory.receipt.contractAddress);
+
+  const tier = await deploy("Tier", {
+    from: deployer,
+    // Contract constructor arguments
+    args: [deployer, "Test", "Test Tier", parseEther("0.001"), 3600],
+    log: true,
+    // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
+    // automatically mining the contract deployment transaction. There is no effect on live networks.
+    autoMine: true,
+  });
+
+  tier.receipt && console.log("Mecenate TIer deployed at:", tier.receipt.contractAddress);
 
   // Get the deployed contract
   // const yourContract = await hre.ethers.getContract("YourContract", deployer);
