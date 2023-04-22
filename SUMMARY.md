@@ -1,4 +1,4 @@
 # Table of contents
 
-* [README](README.md)
+* [Tiers ⨇](README.md)
 * [Quick Start](quick-start.md)
