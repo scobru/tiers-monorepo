@@ -33,12 +33,12 @@ export const Footer = () => {
           <div className="flex justify-center items-center gap-2 text-sm w-full">
             <div>
               <a
-                href="https://github.com/scobru/tier-monorepo"
+                href="https://github.com/scobru/tiers-monorepo"
                 target="_blank"
                 rel="noreferrer"
                 className="underline underline-offset-2"
               >
-                Fork me
+                Source Code
               </a>
             </div>
             <span>·</span>
