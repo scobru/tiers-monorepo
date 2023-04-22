@@ -1,8 +1,8 @@
 import React, { useCallback, useRef, useState } from "react";
-import Image from "next/image";
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Bars3Icon, BugAntIcon, SparklesIcon, HomeIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, HomeIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 
@@ -14,8 +14,9 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
     <Link
       href={href}
       passHref
-      className={`${isActive ? "bg-secondary shadow-md" : ""
-        } hover:bg-secondary hover:shadow-md focus:bg-secondary py-1.5 px-3 text-sm rounded-full gap-2`}
+      className={`${
+        isActive ? "bg-secondary shadow-md" : ""
+      } hover:bg-secondary hover:shadow-md focus:bg-secondary py-1.5 px-3 text-sm rounded-full gap-2`}
     >
       {children}
     </Link>
@@ -35,8 +36,26 @@ export const Header = () => {
 
   const navLinks = (
     <>
+      <Head>
+        <title>⨇ T I E R S</title>
+        <meta name="description" content="Lines Open Board" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
       <li>
-        <NavLink href="/"><HomeIcon className="h-4 w-4" /></NavLink>
+        <NavLink href="/">
+          <HomeIcon className="h-4 w-4" />
+        </NavLink>
+      </li>
+      <li>
+        <NavLink href="/createTier">
+          <h1 className="text-base font-semibold my-0">Create</h1>
+        </NavLink>
       </li>
       {/* <li>
           <NavLink href="/debug">
@@ -50,7 +69,6 @@ export const Header = () => {
           Example UI
         </NavLink>
       </li> */}
-
     </>
   );
 
@@ -83,7 +101,7 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </Link> */}
           <div className="flex flex-col">
-            <span className="font-bold">⨇ T I E R S</span>
+            <span className="font-bold text-xl">⨇ T I E R S</span>
             <span className="text-xs">Decentralized Subscriptions Platform</span>
           </div>
         </div>

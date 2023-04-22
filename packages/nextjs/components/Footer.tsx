@@ -33,7 +33,7 @@ export const Footer = () => {
           <div className="flex justify-center items-center gap-2 text-sm w-full">
             <div>
               <a
-                href="https://github.com/scaffold-eth/se-2"
+                href="https://github.com/scobru/tier-monorepo"
                 target="_blank"
                 rel="noreferrer"
                 className="underline underline-offset-2"
@@ -42,15 +42,16 @@ export const Footer = () => {
               </a>
             </div>
             <span>·</span>
+
             <div>
-              Built with <HeartIcon className="inline-block h-4 w-4" /> at 🏰{" "}
+              Built with <HeartIcon className="inline-block h-4 w-4" /> by{" "}
               <a
-                href="https://buidlguidl.com/"
+                href="https://github.com/scobru"
                 target="_blank"
                 rel="noreferrer"
                 className="underline underline-offset-2"
               >
-                BuidlGuidl
+                Scobru
               </a>
             </div>
             <span>·</span>

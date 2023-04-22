@@ -30,9 +30,11 @@ abstract contract Factory is Ownable {
     payable(owner()).transfer(msg.value);
 
     contractCounter++;
+
     address newContract = _createContract(_creator);
 
     contracts.push(newContract);
+
     createdContracts[newContract] = ContractInfo({contractAddress: newContract, creator: _creator, isActive: true});
 
     emit ContractCreated(newContract, _creator);

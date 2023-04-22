@@ -5,8 +5,6 @@ import "./Tier.sol";
 import "./Factory.sol";
 
 contract TierFactory is Factory {
-  event MecenateSubscriptionCreated(address indexed subscriptionAddress);
-
   constructor(uint256 _creationFee, address _owner) Factory(_creationFee) {
     _transferOwnership(_owner);
   }

@@ -1,5 +1,5 @@
 {
-  "name": "se-2",
+  "name": "tier",
   "version": "0.0.1",
   "private": true,
   "workspaces": {
@@ -9,28 +9,31 @@
     ]
   },
   "scripts": {
-    "account": "yarn workspace @se-2/hardhat account",
-    "chain": "yarn workspace @se-2/hardhat chain",
-    "fork": "yarn workspace @se-2/hardhat fork",
-    "deploy": "yarn workspace @se-2/hardhat deploy",
-    "verify": "yarn workspace @se-2/hardhat verify",
-    "compile": "yarn workspace @se-2/hardhat compile",
-    "generate": "yarn workspace @se-2/hardhat generate",
-    "hardhat:lint": "yarn workspace @se-2/hardhat lint",
-    "hardhat:lint-staged": "yarn workspace @se-2/hardhat lint-staged",
-    "hardhat:test": "yarn workspace @se-2/hardhat test",
-    "start": "yarn workspace @se-2/nextjs dev",
-    "next:lint": "yarn workspace @se-2/nextjs lint",
-    "next:format": "yarn workspace @se-2/nextjs format",
-    "next:check-types": "yarn workspace @se-2/nextjs check-types",
+    "account": "yarn workspace @tier/hardhat account",
+    "chain": "yarn workspace @tier/hardhat chain",
+    "fork": "yarn workspace @tier/hardhat fork",
+    "deploy": "yarn workspace @tier/hardhat deploy",
+    "verify": "yarn workspace @tier/hardhat verify",
+    "compile": "yarn workspace @tier/hardhat compile",
+    "generate": "yarn workspace @tier/hardhat generate",
+    "hardhat:lint": "yarn workspace @tier/hardhat lint",
+    "hardhat:lint-staged": "yarn workspace @tier/hardhat lint-staged",
+    "hardhat:test": "yarn workspace @tier/hardhat test",
+    "start": "yarn workspace @tier/nextjs dev",
+    "next:lint": "yarn workspace @tier/nextjs lint",
+    "next:format": "yarn workspace @tier/nextjs format",
+    "next:check-types": "yarn workspace @tier/nextjs check-types",
     "postinstall": "husky install",
     "precommit": "lint-staged",
-    "vercel": "yarn workspace @se-2/nextjs vercel",
-    "vercel:yolo": "yarn workspace @se-2/nextjs vercel:yolo"
+    "vercel": "yarn workspace @tier/nextjs vercel",
+    "vercel:yolo": "yarn workspace @tier/nextjs vercel:yolo"
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3"
+  },
+  "dependencies": {
+    "@types/bytes": "^3.1.1"
   }
 }
