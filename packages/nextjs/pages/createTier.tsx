@@ -87,13 +87,13 @@ const Tiers: NextPage = () => {
   }, [signer, address, _subscriptions]);
 
   return (
-    <div className="flex min-w-fit flex-col mx-auto flex-grow pt-10 text-base-content">
-      <div className="min-w-fit">
+    <div className="flex w-2/3 flex-col mx-auto flex-grow pt-10 text-base-content">
+      <div className="min-w-full">
         <div className="text-xl mb-2">
           <div className="text-base-content font-bold mb-2 p-2">Protocol Fee</div>
           <div className="text-base-content p-2">{_fee ? `${formatEther(String(_fee))} ETH` : "-"}</div>
         </div>
-        <div className="flex flex-col items-center justify-center w-full max-w-md p-10 px-20 mb-2 ">
+        <div className="flex flex-col items-center text-center justify-center w-full mx-auto max-w-md p-10 px-20 mb-2 ">
           <h2 className="text-lg font-medium">Tiers</h2>
           {subscriptions &&
             subscriptions.map((subscription, index) => (
@@ -101,7 +101,7 @@ const Tiers: NextPage = () => {
                 key={index}
                 className="card bg-secondary hover:bg-accent text-xl text-base-content py-2 px-2 mx-2 font-semibold"
               >
-                <a href={`/viewTier?addr=${subscription}`} className="text-indigo-600 hover:text-indigo-900">
+                <a href={`/viewTier?addr=${subscription}`} className="text-base hover:text-indigo-900">
                   {subscription}
                 </a>
               </div>
@@ -160,7 +160,6 @@ const Tiers: NextPage = () => {
             </button>
           </div>
         </form>
-
         {address == _owner ? (
           <div className="card min-w-fit mx-auto text-base-content  items-center  shadow-2xl px-5 py-5 mb-20">
             ETH Balance : {_contractBalance?.formatted}
