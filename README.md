@@ -2,7 +2,7 @@
 description: Decentralized Subscriptions
 ---
 
-# TIERS ⨇
+# Tiers ⨇
 
 Tiers is a subscriptions protocol that allows users to create their own subscription selecting fee, duration and secret content that only subscribers can access.
 
@@ -54,11 +54,12 @@ yarn start
 
 ### Read-only functions
 
-#### isValidSubscriptions
+#### getSubscriptionStatus
 
-```solidity
-function isValidSubscription(address _subscriber) external view returns (bool);
-```
+````solidity
+function ```solidity
+getSubscriptionStatus(address _subscriber) external view returns (bool);
+````
 
 This function takes an address as input and returns a boolean value indicating whether the subscriber with that address has a valid subscription. The validity of the subscription is determined by comparing the current block's timestamp to the subscription expiration timestamp stored for the subscriber.
 
