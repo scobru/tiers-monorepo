@@ -216,7 +216,7 @@ const ViewTier: NextPage = () => {
               <div className="flex flex-col">
                 <span className=" mb-2 font-base">
                   <strong>🏦 Fee </strong>
-                  <div className="font-medium px-10">{String(Number(_fee) / 1e18)} ETH</div>
+                  <div className="font-medium px-10">{String(Number(_fee) / 1e18)} MATIC</div>
                 </span>
                 <span className=" mb-2 font-base">
                   <strong>📆 Duration </strong>

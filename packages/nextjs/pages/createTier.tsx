@@ -14,6 +14,7 @@ const Tiers: NextPage = () => {
   const [subscriptionDescription, setSubscriptionDescription] = React.useState("0");
   const [subscriptionFee, setSubscriptionFee] = React.useState("0");
   const [subscriptionDuration, setSubscriptionDuration] = React.useState("");
+  const [totalSubscriptions, setTotalSubscriptions] = React.useState(0);
   const deployedContractFactory = useDeployedContractInfo("TierFactory");
 
   const { data: _fee } = useContractRead({
@@ -27,6 +28,13 @@ const Tiers: NextPage = () => {
     abi: deployedContractFactory?.data?.abi,
     functionName: "getContractsOwnedBy",
     args: [String(address)],
+  });
+
+  const { data: _totalSubscritption } = useContractRead({
+    address: deployedContractFactory.data?.address,
+    abi: deployedContractFactory?.data?.abi,
+    functionName: "getContracts",
+    args: [],
   });
 
   const { data: _owner } = useContractRead({
@@ -44,6 +52,7 @@ const Tiers: NextPage = () => {
       try {
         let _sub: any = [];
         _sub = _subscriptions?.filter((feed: string) => feed != "0x0000000000000000000000000000000000000000");
+        setTotalSubscriptions(_totalSubscritption);
         setSubscriptions(_sub);
       } catch (e) {
         console.log(e);
@@ -91,7 +100,7 @@ const Tiers: NextPage = () => {
       <div className="min-w-full">
         <div className="text-xl mb-2">
           <div className="text-base-content font-bold mb-2 p-2">Protocol Fee</div>
-          <div className="text-base-content p-2">{_fee ? `${formatEther(String(_fee))} ETH` : "-"}</div>
+          <div className="text-base-content p-2">{_fee ? `${formatEther(String(_fee))} MATIC` : "-"}</div>
         </div>
         <div className="flex flex-col items-center text-center justify-center w-full mx-auto max-w-md p-10 px-20 mb-2 ">
           <h2 className="text-lg font-medium">Tiers</h2>
