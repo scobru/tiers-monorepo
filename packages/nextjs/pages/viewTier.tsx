@@ -199,11 +199,11 @@ const ViewTier: NextPage = () => {
 
   return (
     <div className="flex items-center flex-col flex-grow pt-10">
-      <div className="w-full max-w-md p-10 bg-slate-200 my-6 text-black rounded-2xl  shadow-2xl shadow-black border-2 border-primary">
+      <div className="w-full max-w-md p-10 bg-slate-200 my-6 text-black   shadow-2xl shadow-black border-2 border-primary">
         <h1 className="text-3xl mb-2 font-semibold">{_name}</h1>
         <span className="text-lg mb-2 font-normal">{_description}</span>
         <p className="mb-5">
-          <span className="font-semibold text-2xl">{_isSub === true ? `Subscribed` : "Not subscribed"}</span>
+          <span className="font-semibold text-2xl underline">{_isSub === true ? `Subscribed` : "Not subscribed"}</span>
         </p>
         <form
           onSubmit={async e => {
@@ -257,7 +257,7 @@ const ViewTier: NextPage = () => {
         </form>
       </div>
       {_owner == address ? (
-        <div className="w-full max-w-md p-10 bg-slate-200 mt-6 text-black rounded-2xl shadow-2xl shadow-black border-2 border-primary">
+        <div className="w-full max-w-md p-10 bg-slate-200 mt-6 text-black shadow-2xl shadow-black border-2 border-primary">
           <p className="font-proxima text-base font-normal justify-start"> Share your IPFS CID to your subscribers</p>
           <input
             className="input mb-5"
@@ -318,7 +318,7 @@ const ViewTier: NextPage = () => {
         </div>
       ) : null}
       <div className="divider"></div>
-      <div className=" flex flex-col text-3xl  my-5 font-bold justify-center text-justify p-4">
+      {/* <div className=" flex flex-col text-3xl  my-5 font-bold justify-center text-justify p-4">
         Import your subscription in your dapp.
       </div>
       <div className="mockup-code">
@@ -340,7 +340,7 @@ const ViewTier: NextPage = () => {
             (YOUR_TIER_CONTRACT).<code className="text-warning">fee</code>()
           </code>
         </pre>
-      </div>
+      </div> */}
     </div>
   );
 };

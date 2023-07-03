@@ -14,9 +14,8 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
     <Link
       href={href}
       passHref
-      className={`${
-        isActive ? "bg-secondary shadow-md" : ""
-      } hover:bg-secondary hover:shadow-md focus:bg-secondary py-1.5 px-3 text-sm rounded-full gap-2`}
+      className={`${isActive ? "bg-secondary shadow-md" : ""
+        } hover:bg-secondary focus:bg-secondary py-2 px-4 text-sm font-bold rounded-full focus:text-black text-gray-400 gap-2`}
     >
       {children}
     </Link>
@@ -73,7 +72,7 @@ export const Header = () => {
   );
 
   return (
-    <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary">
+    <div className="sticky lg:static top-0 navbar bg-base-100 min-h-1 flex-shrink-0 justify-between z-20 shadow-sm shadow-secondary">
       <div className="navbar-start w-auto lg:w-1/2">
         <div className="lg:hidden dropdown" ref={burgerMenuRef}>
           <button
@@ -101,11 +100,11 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </Link> */}
           <div className="flex flex-col">
-            <span className="font-bold text-xl">⨇ T I E R S</span>
-            <span className="text-xs">Decentralized Subscriptions Platform</span>
-          </div>
+            <span className="font-bold text-xl">⨇ Tiers</span>
+            {/*             <span className="text-xs">Decentralized Subscriptions Platform</span>
+ */}          </div>
         </div>
-        <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">{navLinks}</ul>
+        <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2 focus:text-white">{navLinks}</ul>
       </div>
       <div className="navbar-end flex-grow mr-4">
         <RainbowKitCustomConnectButton />
