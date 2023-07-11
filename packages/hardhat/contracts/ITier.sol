@@ -1,7 +1,7 @@
 pragma solidity 0.8.19;
 
 interface ITier {
-  function isValidSubscription(address _subscriber) external view returns (bool);
+  function getSubscriptionStatus(address _subscriber) external view returns (bool);
 
   function subscribe() external payable;
 

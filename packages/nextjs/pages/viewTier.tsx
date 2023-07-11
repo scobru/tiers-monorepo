@@ -220,7 +220,7 @@ const ViewTier: NextPage = () => {
                 </span>
                 <span className=" mb-2 font-base">
                   <strong>📆 Duration </strong>
-                  <div className="font-medium px-10">{formatDate(Number(_duration))}</div>{" "}
+                  <div className="font-medium px-10">{Math.floor(Number(_duration) / 86400)} days</div>{" "}
                 </span>
               </div>
               <span className=" mb-2 font-base">
