@@ -3385,6 +3385,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@scobru/buidllib@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "@scobru/buidllib@npm:1.2.4"
+  checksum: 481535e6391d724071dd6cb65af9f484649274548bff3d181356fd5bb740da61e9e1a8004dbf4e907ea9f4c22dd99085507d56369fe879dab39b312f11ab35af
+  languageName: node
+  linkType: hard
+
 "@scure/base@npm:~1.1.0":
   version: 1.1.1
   resolution: "@scure/base@npm:1.1.1"
@@ -3814,6 +3821,7 @@ __metadata:
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13"
     "@nomiclabs/hardhat-etherscan": ^3.1.0
     "@openzeppelin/contracts": ^4.8.1
+    "@scobru/buidllib": ^1.2.4
     "@typechain/ethers-v5": ^10.1.0
     "@typechain/hardhat": ^6.1.3
     "@types/eslint": ^8

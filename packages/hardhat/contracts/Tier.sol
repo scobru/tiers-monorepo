@@ -37,25 +37,7 @@ contract Tier is Ownable {
     fee = _fee;
     subscriptionDuration = _subscriptionDuration;
     factoryContract = msg.sender;
-
     transferOwnership(_creator);
-  }
-
-  function initialize(
-    address _creator,
-    string memory _name,
-    string memory _description,
-    uint256 _fee,
-    uint256 _subscriptionDuration
-  ) public {
-    require(msg.sender == address(factoryContract), "Only Factory contract can call this");
-
-    creator = _creator;
-    name = _name;
-    description = _description;
-    fee = _fee;
-    subscriptionDuration = _subscriptionDuration;
-    factoryContract = msg.sender;
   }
 
   function subscribe() public payable {

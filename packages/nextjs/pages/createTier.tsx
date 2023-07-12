@@ -34,7 +34,7 @@ const Tiers: NextPage = () => {
   const { data: _fee } = useContractRead({
     address: deployedContractFactory.data?.address,
     abi: deployedContractFactory?.data?.abi,
-    functionName: "creationFee",
+    functionName: "getCreationFee",
   });
 
 
@@ -119,8 +119,9 @@ const Tiers: NextPage = () => {
 
   const createSubscriptionWrite: any = useScaffoldContractWrite({
     contractName: "TierFactory",
-    functionName: "createTier",
+    functionName: "createContract",
     args: [
+      signer?.getAddress(),
       subscriptionName,
       subscriptionDescription,
       parseEther(subscriptionFee),
@@ -226,7 +227,7 @@ const Tiers: NextPage = () => {
       </div>
       <div className="card  w-full mx-auto mt-10 items-center px-10 py-10 mb-20">
         <h1 className="card-title  text-4xl text-left">Create Tier</h1>
-        <form onSubmit={createSubscription} className="text-secondary w-full my-2">
+        <form onSubmit={createSubscription} className="w-full my-2">
           <label htmlFor="name" className="block font-medium  text-gray-500">
             Subscription Name{" "}
           </label>
