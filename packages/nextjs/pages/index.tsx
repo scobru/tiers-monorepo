@@ -1,7 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
-
 import tierBanner from "../public/assets/banner.png"
 
 const Index: NextPage = () => {
