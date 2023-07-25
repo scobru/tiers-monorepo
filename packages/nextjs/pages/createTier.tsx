@@ -168,7 +168,7 @@ const Tiers: NextPage = () => {
         <div className="flex flex-col items-center text-center text-base justify-center w-full mx-auto max-w-md p-4 md:p-10 px-4 md:px-20 mb-5 mt-5">
           {subscriptions && !showAllTiers && (
             <div className="card text-xl text-base-content py-2 px-2 font-semibold">
-              <div className="text-3xl font-extrabold mb-10">Owned</div>
+              <div className="text-6xl font-extrabold mb-10">Owned</div>
               <table className="table-auto w-full text-left whitespace-nowrap">
                 <thead>
                   <tr>
@@ -196,7 +196,7 @@ const Tiers: NextPage = () => {
 
           {subscriptions && showAllTiers && (
             <div className="card text-xl text-base-content py-2 px-2 font-semibold">
-              <div className="text-3xl font-extrabold mb-10">All Tiers</div>
+              <div className="text-6xl font-extrabold mb-10">All Tiers</div>
               <table className="table-auto w-full text-left whitespace-nowrap">
                 <thead>
                   <tr>

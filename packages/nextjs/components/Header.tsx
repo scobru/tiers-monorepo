@@ -15,7 +15,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
       href={href}
       passHref
       className={`${isActive ? "bg-secondary shadow-md" : ""
-        } hover:bg-secondary focus:bg-secondary py-2 px-4 text-sm font-bold rounded-full focus:text-black text-gray-400 gap-2`}
+        } hover:bg-secondary focus:bg-secondary py-2 px-4 text-sm font-bold rounded-full  gap-2`}
     >
       {children}
     </Link>
@@ -36,7 +36,7 @@ export const Header = () => {
   const navLinks = (
     <>
       <Head>
-        <title>⨇ T I E R S</title>
+        <title>Tiers</title>
         <meta name="description" content="Lines Open Board" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
